@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Footer from './components/footer';
 import MovieDetail from './pages/movieDetailPage';
 import PageNotFound from './pages/PageNotFound';
+import { Link } from 'react-router-dom';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 function App() {
   return (

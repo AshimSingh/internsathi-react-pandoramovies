@@ -1,7 +1,7 @@
 .drawer {
     z-index: 100;
     top: 0;
-    background-color: #bf98e7;
+    background-color: #fff;
     position: absolute;
     right: -10px;
     height: 100%;
@@ -16,6 +16,9 @@
     width: 100%;
     background-color: var(--primary-color);
     color: #fff;   
+}
+.linktiles{
+    color: var(--secondary-color);
 }
 .drawer__tiles{
     display: flex;
