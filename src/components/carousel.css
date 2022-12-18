@@ -1,0 +1,27 @@
+.carousel{
+    /* margin-top: 150px; */
+    margin-top: 10px;
+    height: 40vh;
+    overflow: hidden;
+    cursor: pointer;
+}
+.Slider {
+    width: 99%;
+    z-index: 0;
+}
+.Sliderimg {
+    width: 100%;
+    /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
+}
+@media(max-width:600px){
+    .carousel{
+        height: 35vh;
+        overflow: show;
+    }
+    .Slider{
+        margin-top: 20px;
+    }
+    .Sliderimg{
+        height: 300px;
+    }
+}

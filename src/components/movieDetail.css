@@ -1,0 +1,54 @@
+.moviedetail{
+    margin-top: 10px;
+}
+.image{
+    width: 30%;
+}
+.Description{
+    margin-left: 10px;
+    width: 70%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
+    overflow-x: scroll;
+    scrollbar-color: dark;
+    
+}
+.image img{
+    max-width: 400px;
+    width: 100%;
+    border-radius: 10px;
+}
+.movie__name{
+    color: var(--secondary-color);
+    font-size: 35px;
+    font-weight: 600;
+}
+.title {
+    font-size: 35px;
+    font-weight: 800;
+    font-family: 'Dancing Script', cursive;
+}
+.sub__title{
+    padding-left: 15px;
+    color: rgb(143, 136, 136);
+}
+@media(max-width:864px){
+    .moviedetail{
+        display: flex;
+        flex-direction: column;
+    }
+    .Description{
+        height: 100%;
+        overflow-x: visible;
+    }
+    .image{
+        width: 80%;
+    }
+    .movie__name{
+        font-size: 20px;
+        margin-top: 10px;
+    }
+}
