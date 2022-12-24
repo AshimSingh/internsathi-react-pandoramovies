@@ -6,20 +6,25 @@ import Drawer from './drawer';
 import { useRef,useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSearch } from '../fetch/useSearch';
+import { style } from '@mui/system';
 const Header = () => {
     const [showDrawer,setDrawer]=useState(false)
     const [coverBox,setCoverBox]=useState(false)
     const[showSearch,setSearch]=useState(false)
+    const [top,setTop]=useState('0')
+    const search=document.querySelector(".search")
     const open_search=()=>{
+        setTop('150px')
         setSearch(true)
         setCoverBox(true)
+        
+        
     }
     const close_menu=()=>{
         setDrawer(false)
         setCoverBox(false)
         setSearch(false)
-        const search=document.querySelector(".search")
-        search.style.top='0px'
+        setTop('0')
     }
     const open_menu=()=>{
         setDrawer(true)
@@ -41,7 +46,7 @@ const Header = () => {
             </div>
             </div>    
             <div className='header__searchbox'>
-                <Search__Box showSearch={showSearch} open_search={open_search} close_menu={close_menu} />
+                <Search__Box showSearch={showSearch} open_search={open_search} close_menu={close_menu} top={top} />
             </div>
             <div className='header__menu'>
                 <MenuIcon onClick={open_menu} style={{fontSize:'30px',color:"var(--secondary-color)"}}/>
@@ -50,26 +55,26 @@ const Header = () => {
       </div>
       <div className='parent header mobileview'>
         <div className='main'>
-            <Search__Box showSearch={showSearch} open_search={open_search} close_menu={close_menu} />
+                    <Search__Box showSearch={showSearch} open_search={open_search} close_menu={close_menu} top={top} />
+            
         </div>
       </div>
       {showDrawer?<Drawer/>:""}
     </div>
   )
 }
-const Search__Box=({showSearch,open_search,close_menu})=>{
-    const search=useRef(null)
+const Search__Box=({showSearch,open_search,close_menu,top})=>{
     const open=()=>{
         open_search()
-        search.current.style.top='150px'
     }
     const [searchitem,setSearchItem]=useState('')
     const {searchdata}=useSearch(searchitem)
+    
     const handelSubmit=(e)=>{
         setSearchItem(e.target.value)
     }
     return(
-        <div className='search' ref={search}>
+        <div className='search' style={{top:top}}>
             <div className='search__box'>
                 <input type='text' placeholder="Search " className='search__box' onClick={open}
             value={searchitem}

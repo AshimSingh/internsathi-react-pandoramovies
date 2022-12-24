@@ -2,12 +2,10 @@
 .header{
     height: 60px;
     z-index: 100;
-     background-color: var(--primary-color);
-    position: sticky !important;
+    background-color: var(--primary-color);
+    position: fixed !important;
+    top: 0px;
     
-}
-.header2{
-   top:60px
 }
 .header__title{
     font-family: 'Dancing Script', cursive;
@@ -45,7 +43,6 @@
 .search{
     position: relative;
     width: 100%;
-    top: 0px
 }
 .search__box{
     height: 40px;
@@ -82,6 +79,7 @@
 }
 .mobileview{
     display: none;
+    position: sticky !important;
 }
 .coverBox{
     width: 100%;
@@ -129,6 +127,8 @@
     }
     .mobileview{
         display: flex;
+        margin-top: 60px;
+        z-index: 98;
     }
     .search{
         max-width: none;
